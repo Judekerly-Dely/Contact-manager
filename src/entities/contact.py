@@ -1,9 +1,9 @@
 from datetime import datetime, timezone
 from dataclasses import field, dataclass
 from enum import Enum
-from src.entities.email import Email
-from src.entities.name import Firstname, Lastname
-from src.entities.number import Number
+from email import Email
+from name import Firstname, Lastname
+from number import Number
 
 def _now() -> datetime:
     return datetime.now(timezone.utc)
