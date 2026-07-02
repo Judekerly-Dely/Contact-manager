@@ -24,6 +24,7 @@ class ContactFamiliarity(Enum):
 
     OTHER = "other"
     FAVORITE = "favorite"
+    PROFESSIONAL = "professional"
 
 
 @dataclass
@@ -46,12 +47,16 @@ class Contact:
 
     def is_favorite(self):
         self.updated_at = _now()
-        return self.status == ContactStatus.FAVORITE
+        return self.statusfamiliarity == ContactFamiliarity.FAVORITE
     
     def unset_favorite(self):
         self.updated_at = _now()
-        if self.status == ContactStatus.FAVORITE:
-            self.status = ContactStatus.OTHER
+        if self.statusfamiliarity == ContactFamiliarity.FAVORITE:
+            self.statusfamiliarity = ContactFamiliarity.OTHER
+
+    def is_professional(self):
+        self.updated_at = _now()
+        return self.statusfamiliarity == ContactFamiliarity.PROFESSIONAL
 
     def is_blocked(self):
         self.updated_at = _now()
