@@ -1,3 +1,5 @@
+#this file represents the condition for a phone number (haitian), to be accepted by the system
+
 class Number:
     def __init__(self, number: str):
 

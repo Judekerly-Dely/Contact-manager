@@ -1,4 +1,4 @@
-
+#this file represents the conditions for an email to be accepted by the system
 class Email:
     """A class representing an email address."""
 

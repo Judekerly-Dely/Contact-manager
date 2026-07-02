@@ -1,3 +1,5 @@
+#this file is the entity for the contact manager system. It guarantees that no rule or broken and the system can run smoothly
+
 from datetime import datetime, timezone
 from dataclasses import field, dataclass
 from enum import Enum

@@ -1,3 +1,5 @@
+#this file represents the condition for a firstname or lastname to be accepted by the system
+
 from datetime import datetime, timezone
 
 def _now() -> datetime:
