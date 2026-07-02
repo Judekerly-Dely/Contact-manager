@@ -17,6 +17,13 @@ class ContactStatus(Enum):
     SUSPENDED = "suspended"
     DELETED = "deleted"
     BLOCKED = "blocked"
+    FAVORITE = "favorite"
+
+class ContactFamiliarity(Enum):
+    """The different familiarity of a contact in the system"""
+
+    OTHER = "other"
+    FAVORITE = "favorite"
 
 
 @dataclass
@@ -28,6 +35,7 @@ class Contact:
     email: Email
     phone: Number
     status: ContactStatus = field(default_factory = ContactStatus.ACTIVE)
+    statusfamiliarity: ContactFamiliarity = field(default_factory = ContactFamiliarity.OTHER)
     created_at: datetime = field(default_factory=lambda: _now)
     updated_at: datetime = field(default_factory=lambda: _now)
 
@@ -35,6 +43,15 @@ class Contact:
     def change_status(self, new_status: ContactStatus) -> None:
         self.status = new_status
         self.updated_at = _now()
+
+    def is_favorite(self):
+        self.updated_at = _now()
+        return self.status == ContactStatus.FAVORITE
+    
+    def unset_favorite(self):
+        self.updated_at = _now()
+        if self.status == ContactStatus.FAVORITE:
+            self.status = ContactStatus.OTHER
 
     def is_blocked(self):
         self.updated_at = _now()

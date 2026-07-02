@@ -1,6 +1,6 @@
 #this file represents the conditions for an email to be accepted by the system
 class Email:
-    """A class representing an email address."""
+    """A class representing an email address and the validation condition."""
 
     def __init__(self, address: str):
 
