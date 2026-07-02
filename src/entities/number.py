@@ -8,7 +8,7 @@ class Number:
     def validate(content: str) -> bool:
         """For Validating the phone number"""
 
-        if not content.startswith("+509"):
+        if not content.startswith("+509") and len(content) == 8:
             content = str(f'+509{content}')
         return content.isalpha()    
 

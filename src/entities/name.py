@@ -8,7 +8,6 @@ class Name:
 
     def __init__(self, content: str):
 
-        self.created_at = _now()
         self.updated_at = _now()
 
         if not self.validate(content):

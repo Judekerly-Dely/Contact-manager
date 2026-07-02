@@ -26,8 +26,8 @@ class Contact:
     email: Email
     phone: Number
     status: ContactStatus = field(default_factory = ContactStatus.ACTIVE)
-    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: datetime = field(default_factory=lambda: _now)
+    updated_at: datetime = field(default_factory=lambda: _now)
 
 
     def change_status(self, new_status: ContactStatus) -> None:
