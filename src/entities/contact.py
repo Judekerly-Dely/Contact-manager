@@ -30,7 +30,7 @@ class ContactFamiliarity(Enum):
 @dataclass
 class Contact:    
 
-    contact_id: str  
+    contact_id: int
     first_name: Firstname
     last_name: Lastname
     email: Email
