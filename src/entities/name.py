@@ -10,12 +10,11 @@ class Name:
 
     def __init__(self, content: str):
 
-        self.updated_at = _now()
-
         if not self.validate(content):
-            raise ValueError(f"{content} is invalid.")
+            return False
         
-        self.content = content      
+        self.updated_at = _now()
+        self.content = content                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
         
     def validate(content: str) -> bool:
         """For Validating the name"""
@@ -26,13 +25,14 @@ class Name:
     
     def change(self, new_content: str) -> None:
         if not self.validate(new_content):
-            raise ValueError(f"{new_content} is invalid.")
+            return False
         self.content = new_content
         self.updated_at = _now()
+        return True
 
 class Firstname(Name):
-    pass
+    ...
 
 
 class Lastname(Name):
-    pass
+    ...

@@ -5,7 +5,7 @@ class Email:
     def __init__(self, address: str):
 
         if not self.validate(address):
-            raise ValueError(f"{address} is an invalid email address.")
+            return False
         self.address = address
 
     def __str__(self):
@@ -14,5 +14,5 @@ class Email:
     def validate(content: str) -> bool:
         """For Validating the email address"""
         if not content:
-            raise ValueError("Email address cannot be empty.")
+            return False
         return "@" in content and "." in content

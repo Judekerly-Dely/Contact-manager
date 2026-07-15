@@ -4,7 +4,7 @@ class Number:
     def __init__(self, number: str):
 
         if not self.validate(number):
-            raise ValueError(f"{number} is an invalid phone number.")
+            return False
         self.number = number
 
     def validate(content: str) -> bool:
