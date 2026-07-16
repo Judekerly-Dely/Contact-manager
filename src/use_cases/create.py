@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from entities.contact import Contact
-from interfaces import ContactRepository
+from src.entities.contact import Contact
+from src.use_cases.interfaces.contact_repository import ContactRepository
 
 @dataclass
 class CreateContactInput:
