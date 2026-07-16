@@ -25,11 +25,10 @@ class ContactController:
         if not first_name or not last_name or not phone:
             return {
                 "success": False,
-                "message": "Missing required fields"
+                "message": "Missing required informations"
             }
 
         try:
-
             contact_input = CreateContactInput(
                 first_name=first_name,
                 last_name=last_name,

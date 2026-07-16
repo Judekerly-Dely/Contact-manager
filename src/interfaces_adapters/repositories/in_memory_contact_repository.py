@@ -1,8 +1,8 @@
 from typing import Dict, List, Optional
 import copy
 
-from entities.contact import Contact
-from use_cases.interfaces.contact_repository import ContactRepository
+from src.entities.contact import Contact
+from src.use_cases.interfaces.contact_repository import ContactRepository
 
 
 class InMemoryContactRepository(ContactRepository):

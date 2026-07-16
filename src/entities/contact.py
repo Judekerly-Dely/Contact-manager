@@ -35,8 +35,8 @@ class Contact:
     contact_id: int
     first_name: Firstname
     last_name: Lastname
-    email: Optional[Email] = None
     phone: Number
+    email: Optional[Email] = None
     tag: Optional[Tag] = None
     birthday: Optional[Birthday] = None
     status: ContactStatus = field(default_factory = lambda: ContactStatus.ACTIVE)
@@ -47,6 +47,7 @@ class Contact:
     def _post_init_(self):
         if self.contact_id <= 0:
             return False
+        self.contact_id = self.contact_id
 
     def change_status(self, new_status: ContactStatus) -> None:
         self.status = new_status
