@@ -50,8 +50,8 @@ def run_cli():
             break
 
         elif cmd == "add":
-            first_name = input("First name : ").strip()
-            last_name = input("Last name : ").strip()
+            first_name = input("Firstname : ").strip()
+            last_name = input("Lastname : ").strip()
             phone = input("Phone : ").strip()
             email = input("Email : ").strip()
             tag = input("Tag : ").strip()
@@ -60,7 +60,7 @@ def run_cli():
                     "first_name": first_name,
                     "last_name": last_name,
                     "phone": phone,
-                    "email": email,
+                    "email": [email] if email else [],
                     "tags":[tag] if tag else []
                 })
 
@@ -78,7 +78,7 @@ def run_cli():
             contacts = result["contacts"]
 
             if not contacts:
-                print("(No contacts)")
+                print("(No contacts found)")
 
             else:
                 for contact in contacts:

@@ -4,9 +4,8 @@ from src.use_cases.interfaces.contact_repository import ContactRepository
 
 @dataclass
 class CreateContactInput:
-    firstname: str
-    lastname: str
-    email: str
+    first_name: str
+    last_name: str
     phone: str
 
 @dataclass
@@ -19,11 +18,10 @@ class CreateContactUseCase:
 
     def execute(self, input_data: CreateContactInput) -> CreateContactOutput:
         contact = Contact(
-            firstname=input_data.firstname,
-            lastname=input_data.lastname,
-            email=input_data.email,
+            contact_id= input_data.contact_id,
+            first_name=input_data.first_name,
+            last_name=input_data.last_name,
             phone=input_data.phone,
-            tag = None
         )
         
         created_contact = self.contact_repository.create(contact)
